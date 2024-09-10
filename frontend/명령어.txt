@@ -1,0 +1,36 @@
+셋팅
+const express = require("express");
+설치 명령어 npm install express mongoose dotenv
+터미널에서 node .\backend\server.js 치기 힘드니
+package.json에 script안 "dev": "nodemon backend/server.js" 추가후에 터미널에서 명령어 npm run dev
+
+주의
+백앤드와 프론트 런은 틀림.
+백앤드는 백앤드 폴더에서 npm run dev
+프론트는 프론트 폴더에서 npm run dev
+
+
+명령어
+npm create vite@latest .
+react -> javascript
+npm i
+npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+npm i react-router-dom
+npm i @chakra-ui/icons
+npm i zustand
+
+
+ci/cd
+server.js에서 
+if(process.env.NODE_ENV === "production"){
+	app.use(express.static(path.join(__dirname, "/frontend/dist")));
+}
+추가후 cli에서 프론트폴더내에 npm run build
+
+프론트안에 노드모듈폴더 삭제후  package.json안에
+"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
+
+최상위폴더에서 npm run build
+
+주의
+NODE_ENV 에러 날시에 npm install -g win-node-env 설치
